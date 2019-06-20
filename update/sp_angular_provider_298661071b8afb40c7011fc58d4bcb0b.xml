@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>recognition</name>
+        <script><![CDATA[function recognition(SelectionService, $document) {
+	return {
+		restrict: 'E',
+		scope: {
+			type: "=",
+			name: "=",
+			value: "=",
+			category: "=",
+		},
+		template: '<div ng-style="style" ng-click="select()"><div id="{{ value }}" data-recognition-type="{{ type }}" data-recognition-name="{{ name }}" data-recognition-value="{{ value }}" data-recognition-category="{{ category }}"></div>{{ name }}</div>',
+		link: function (scope, element) {
+			var makeSelection = SelectionService.select;
+			scope.style = {
+				'border': '1px solid',
+			};
+			scope.select = function () {
+				var element = $document[0].getElementById(scope.value);
+				var selection = {
+					name: element.getAttribute("data-recognition-name"),
+					value: element.getAttribute("data-recognition-value"),
+					type: element.getAttribute("data-recognition-type"),
+					category: element.getAttribute("data-recognition-category"),
+				};
+				makeSelection(selection);
+			};
+		},
+	};
+}]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>HSGill</sys_created_by>
+        <sys_created_on>2019-06-19 16:05:41</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>298661071b8afb40c7011fc58d4bcb0b</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>recognition</sys_name>
+        <sys_package display_value="Sparx Achievers" source="x_trme_sparx_achie">75cf68cb1b46fb40c7011fc58d4bcb50</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Sparx Achievers">75cf68cb1b46fb40c7011fc58d4bcb50</sys_scope>
+        <sys_update_name>sp_angular_provider_298661071b8afb40c7011fc58d4bcb0b</sys_update_name>
+        <sys_updated_by>HSGill</sys_updated_by>
+        <sys_updated_on>2019-06-20 13:13:18</sys_updated_on>
+        <type>directive</type>
+    </sp_angular_provider>
+</record_update>

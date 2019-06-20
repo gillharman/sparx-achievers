@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>pointsSlider</name>
+        <script><![CDATA[function pointsSlider(SelectionService) {
+	return {
+		restrict: 'E',
+		replace: true,
+		scope: {
+			min: "=",
+			max: "=",
+			step: "=",
+		},
+		template: '<div><input type="range" min="{{ min }}" max="{{ max }}" value="{{ value }}" step="{{ step }}"/></div>',
+		link: function(scope, element) {
+			var slider = element.find('input')[0];
+			scope.value = 0;
+			slider.oninput = function () {
+				scope.value = this.value;
+			};
+			var makeSelection = SelectionService.select;
+			scope.$watch('value', function () {
+				console.log('scope.value', scope.value);
+				var selection = {
+					category: 'slider',
+					value: scope.value,
+				};
+				makeSelection(selection);
+			});
+		},
+	};
+}]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>HSGill</sys_created_by>
+        <sys_created_on>2019-06-20 14:19:54</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>4e4f46df1b467f40c7011fc58d4bcb9d</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>pointsSlider</sys_name>
+        <sys_package display_value="Sparx Achievers" source="x_trme_sparx_achie">75cf68cb1b46fb40c7011fc58d4bcb50</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Sparx Achievers">75cf68cb1b46fb40c7011fc58d4bcb50</sys_scope>
+        <sys_update_name>sp_angular_provider_4e4f46df1b467f40c7011fc58d4bcb9d</sys_update_name>
+        <sys_updated_by>HSGill</sys_updated_by>
+        <sys_updated_on>2019-06-20 16:16:12</sys_updated_on>
+        <type>directive</type>
+    </sp_angular_provider>
+</record_update>

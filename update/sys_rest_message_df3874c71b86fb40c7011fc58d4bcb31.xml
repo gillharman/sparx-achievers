@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message">
+    <sys_rest_message action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <authentication_type>oauth2</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <description>Sparx Achievers API</description>
+        <name>Sparx Achievers</name>
+        <oauth2_profile display_value="Sparx Achievers default_profile">72c5494b1bc6fb40c7011fc58d4bcbba</oauth2_profile>
+        <protocol_name/>
+        <rest_endpoint>https://trimedx.sandbox.achievers.com/</rest_endpoint>
+        <sys_class_name>sys_rest_message</sys_class_name>
+        <sys_created_by>HSGill</sys_created_by>
+        <sys_created_on>2019-06-19 12:56:32</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>df3874c71b86fb40c7011fc58d4bcb31</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Sparx Achievers</sys_name>
+        <sys_package display_value="Sparx Achievers" source="x_trme_sparx_achie">75cf68cb1b46fb40c7011fc58d4bcb50</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Sparx Achievers">75cf68cb1b46fb40c7011fc58d4bcb50</sys_scope>
+        <sys_update_name>sys_rest_message_df3874c71b86fb40c7011fc58d4bcb31</sys_update_name>
+        <sys_updated_by>HSGill</sys_updated_by>
+        <sys_updated_on>2019-06-19 13:40:08</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message>
+</record_update>

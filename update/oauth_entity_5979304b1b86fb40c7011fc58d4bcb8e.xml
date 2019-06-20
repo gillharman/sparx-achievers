@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity">
+    <oauth_entity action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <access_token_lifespan>1800</access_token_lifespan>
+        <active>true</active>
+        <auth_code_lifespan>0</auth_code_lifespan>
+        <auth_url/>
+        <certificate_url/>
+        <client_id>medxce_b02f82c669de33ebabf51d7b75b27522a0ab2333101182bda8ed953430e3be38</client_id>
+        <client_secret>UOanMMVykNSDnOLE/3iANb2eDsTdFAMTdhVVojg/hqlLdOv7wU7pgavnerfheoQlrZI/cvIi6Qj6IRZUYxNhh3sxpJr4TKMY</client_secret>
+        <client_uuid>8d79304b1b86fb40c7011fc58d4bcb66</client_uuid>
+        <comments>Sparx Achievers API</comments>
+        <default_grant_type>authorization_code</default_grant_type>
+        <id_token_lifespan>0</id_token_lifespan>
+        <logo_url/>
+        <message_signature_lifespan>0</message_signature_lifespan>
+        <name>Sparx Achievers</name>
+        <oauth_api_script/>
+        <protocol_name/>
+        <redirect_url>https://trimedxsbx.service-now.com/oauth_redirect.do</redirect_url>
+        <refresh_token_lifespan>8640000</refresh_token_lifespan>
+        <revoke_token_url/>
+        <salt>0</salt>
+        <sys_class_name>oauth_entity</sys_class_name>
+        <sys_created_by>HSGill</sys_created_by>
+        <sys_created_on>2019-06-19 12:55:13</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>5979304b1b86fb40c7011fc58d4bcb8e</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Sparx Achievers</sys_name>
+        <sys_package display_value="Sparx Achievers" source="x_trme_sparx_achie">75cf68cb1b46fb40c7011fc58d4bcb50</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Sparx Achievers">75cf68cb1b46fb40c7011fc58d4bcb50</sys_scope>
+        <sys_update_name>oauth_entity_5979304b1b86fb40c7011fc58d4bcb8e</sys_update_name>
+        <sys_updated_by>HSGill</sys_updated_by>
+        <sys_updated_on>2019-06-20 13:27:51</sys_updated_on>
+        <token_url>https://trimedx.sandbox.achievers.com/oauth/v2/openIDConnectClient/token</token_url>
+        <type>oauth_provider</type>
+        <use_mutual_auth>false</use_mutual_auth>
+        <user/>
+    </oauth_entity>
+</record_update>

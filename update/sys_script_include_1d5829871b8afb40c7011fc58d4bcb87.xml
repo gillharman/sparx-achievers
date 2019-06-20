@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_trme_sparx_achie.sparxAchieversUtils</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>sparxAchieversUtils</name>
+        <script><![CDATA[var sparxAchieversUtils = Class.create();
+sparxAchieversUtils.prototype = {
+    initialize: function() {
+		this.recognition = {};
+    },
+	
+	getRecognitions: function() {
+		var endPoint = gs.getProperty('');		
+	},
+
+	_restMessage: function(endPoint, method) {
+		try {
+			var r = new sn_ws.RESTMessageV2('x_trme_sparx_achie.Sparx Achievers');
+			r.setEndpoint(endPoint);
+			r.setHttpMethod(method);
+
+			var response = r.execute();
+			var responseBody = response.getBody();
+			var httpStatus = response.getStatusCode();
+		}
+		catch(ex) {
+			var message = ex.message;
+		}
+	},
+
+    type: 'sparxAchieversUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>HSGill</sys_created_by>
+        <sys_created_on>2019-06-19 16:13:32</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>1d5829871b8afb40c7011fc58d4bcb87</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>sparxAchieversUtils</sys_name>
+        <sys_package display_value="Sparx Achievers" source="x_trme_sparx_achie">75cf68cb1b46fb40c7011fc58d4bcb50</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Sparx Achievers">75cf68cb1b46fb40c7011fc58d4bcb50</sys_scope>
+        <sys_update_name>sys_script_include_1d5829871b8afb40c7011fc58d4bcb87</sys_update_name>
+        <sys_updated_by>hsgill</sys_updated_by>
+        <sys_updated_on>2019-06-19 16:29:06</sys_updated_on>
+    </sys_script_include>
+</record_update>

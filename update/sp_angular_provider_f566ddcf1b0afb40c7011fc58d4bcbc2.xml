@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>recognitionType</name>
+        <script><![CDATA[function recognitionType(SelectionService, $document) {
+	return {
+		restrict: 'E',
+		replace: true,
+		scope: {
+			type: "=",
+			name: "=",
+			value: "=",
+			category: "=",
+		},
+		template: '<div ng-style="style"><div id="{{ value }}" data-recognition-type-name="{{ name }}" data-recognition-type-value="{{ value }}" data-recognition-type="{{ type }}" data-recognition-type-category="{{ category }}" ng-click="select()">{{ name }}</div><div>',
+		link: function(scope, element) {
+			var makeSelection = SelectionService.select;
+			console.log('makeSelection: ' + makeSelection);
+			scope.style = {
+				'border': '1px solid #dadce0',
+				'background-color': '#fff',
+				'border-radius': '8px',
+				'text-align': 'center',
+			};
+			scope.select = function() {
+				var element = $document[0].getElementById(scope.value);
+				var selection = {
+					name: element.getAttribute("data-recgnition-type-name"),
+					value: element.getAttribute("data-recognition-type-value"),
+					type: element.getAttribute("data-recognition-type"),
+					category: element.getAttribute("data-recognition-type-category"),
+				};
+				makeSelection(selection);
+			};
+		},
+	};
+}]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>HSGill</sys_created_by>
+        <sys_created_on>2019-06-19 15:10:24</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f566ddcf1b0afb40c7011fc58d4bcbc2</sys_id>
+        <sys_mod_count>80</sys_mod_count>
+        <sys_name>recognitionType</sys_name>
+        <sys_package display_value="Sparx Achievers" source="x_trme_sparx_achie">75cf68cb1b46fb40c7011fc58d4bcb50</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Sparx Achievers">75cf68cb1b46fb40c7011fc58d4bcb50</sys_scope>
+        <sys_update_name>sp_angular_provider_f566ddcf1b0afb40c7011fc58d4bcbc2</sys_update_name>
+        <sys_updated_by>HSGill</sys_updated_by>
+        <sys_updated_on>2019-06-20 16:27:44</sys_updated_on>
+        <type>directive</type>
+    </sp_angular_provider>
+</record_update>

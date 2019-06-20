@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope) {
+    /* widget controller */
+    var c = this;
+
+    c.recognitionType = {
+        social: {
+            name: "Social Recognition",
+            value: "social_recognition",
+            type: "social",
+			category: "recognitionType",
+            selected: false
+        },
+        points: {
+            name: "Points-based Recognition",
+            value: "points_based_recognition",
+            type: "points",
+			category: "recognitionType",
+            selected: false
+        }
+    };
+
+    c.recognitions = {
+        innovation: {
+            name: "Innovation",
+            value: "innovation",
+            type: "innovation",
+			category: "recognition",
+            selected: false
+        },
+        making_a_difference: {
+            name: "Making a Difference",
+            value: "making_a_difference",
+            type: "making_a_difference",
+			category: "recognition",
+            selected: false
+        },
+        excellence: {
+            name: "Excellence",
+            value: "excellence",
+            type: "excellence",
+			category: "recognition",
+            selected: false
+        }
+    };
+	
+	c.points = 250;
+	
+	c.submitForm = function() {
+		var recognitionType = getSelected(c.recognitionType);
+		var recognition = getSelected(c.recognitions);
+		if (recognitionType.selected != undefined && recognition.selected != undefined){
+			console.log('recognitionType: ', recognitionType);
+			console.log('recognition: ' , recognition);
+			console.log('points: ', c.points);
+		}
+	};
+	
+	$scope.$on('selection-made', function(event, selection) {
+		if(selection.category == "recognitionType") {
+			clearSelected(c.recognitionType);
+			c.recognitionType[selection.type].selected = true;
+		} 
+		else if (selection.category == "recognition") {
+			clearSelected(c.recognitions);
+			c.recognitions[selection.type].selected = true;
+		}
+		else if (selection.category == "slider") {
+			c.points = selection.value;
+		}
+	});
+	
+	function clearSelected (obj) {
+		for(var key in obj) {
+			obj[key].selected = false;
+		}
+		return;
+	}
+	
+	function getSelected (obj) {
+		for(var key in obj) {
+			if(obj[key].selected)
+				return obj[key];
+			else
+				continue;
+		}
+		return {};
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>sparx</id>
+        <internal>false</internal>
+        <link/>
+        <name>Sparx</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>HSGill</sys_created_by>
+        <sys_created_on>2019-06-19 14:40:31</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>efb3158b1b0afb40c7011fc58d4bcb06</sys_id>
+        <sys_mod_count>108</sys_mod_count>
+        <sys_name>Sparx</sys_name>
+        <sys_package display_value="Sparx Achievers" source="x_trme_sparx_achie">75cf68cb1b46fb40c7011fc58d4bcb50</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Sparx Achievers">75cf68cb1b46fb40c7011fc58d4bcb50</sys_scope>
+        <sys_update_name>sp_widget_efb3158b1b0afb40c7011fc58d4bcb06</sys_update_name>
+        <sys_updated_by>HSGill</sys_updated_by>
+        <sys_updated_on>2019-06-20 16:18:22</sys_updated_on>
+        <template><![CDATA[<form ng-submit="c.submitForm()">
+  <div class="col-sm-6" ng-repeat="(key,value) in c.recognitionType">
+    <recognition-type type="c.recognitionType[key].type" name="c.recognitionType[key].name" value="c.recognitionType[key].value" category="c.recognitionType[key].category"></recognition-type>
+  </div>
+  <div class="col-sm-12" ng-repeat="(key,value) in c.recognitions">
+    <recognition type="c.recognitions[key].type" name="c.recognitions[key].name" value="c.recognitions[key].value" category="c.recognitions[key].category"></recognition>
+  </div>
+  <div>
+    <points-slider min="0" max="750" step="250"></points-slider>
+  </div>
+  <input type="submit" value="Submit"/>
+</form>
+<div><pre>{{c.recognitionType|json}}</pre></div>
+<div><pre>{{c.recognitions|json}}</pre></div>
+<div><pre>{{c.points|json}}</pre></div>]]></template>
+    </sp_widget>
+</record_update>
